@@ -6,21 +6,24 @@
     <meta name="theme-color" content="#1d1f20" />
     <meta
       name="description"
-      content="F-Market — продажа игровых скинов. Узнайте, как обменять предметы Steam и получить выплату."
+      content="Каталог скинов CS2 в F-Market. Подбор предметов по оружию, износу и цене, избранное и сравнение."
     />
-    <title>F-Market — продажа скинов</title>
+    <title>Каталог скинов CS2 — F-Market</title>
     <link rel="icon" href="./images/58825.png" />
     <link rel="stylesheet" href="./css/fonts.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/navigation-pages.css">
+    <link rel="stylesheet" href="./css/market.css">
     <script src="./js/main.js" defer></script>
+    <script src="./js/market-preview.js" defer></script>
+    <script src="./js/market.js" defer></script>
   </head>
-  <body>
+  <body class="market-page" data-menu-breakpoint="440">
     <a class="skip-link" href="#main">Перейти к содержимому</a>
     <div class="wrapper" id="top">
       <header class="header">
         <div class="container header__inner">
-          <a class="logo" href="#top" aria-label="F-Market — главная">
+          <a class="logo" href="./index.html" aria-label="F-Market — главная">
             <span class="logo__art">
               <img
                 src="./images/58825.webp"
@@ -34,7 +37,7 @@
           </a>
           <nav class="nav" id="navigation" aria-label="Основная навигация">
             <div class="nav__intro"><span class="nav__eyebrow">F-MARKET / CS2</span><h2>Твои скины.<br><span>Твои возможности.</span></h2><p>Всё о продаже — в одном месте.</p></div>
-            <div class="nav__links"><a class="nav__active" aria-current="page" href="./index.html"><span class="nav__icon" aria-hidden="true">⌂</span><span>Главная<small>Знакомство с F-Market</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><a href="./change-page.html"><span class="nav__icon" aria-hidden="true">⇄</span><span>Обмен<small>Выбор предметов и расчёт</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><a href="./index.html#how"><span class="nav__icon" aria-hidden="true">≋</span><span>Как продать<small>Четыре простых шага</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><a href="#faq"><span class="nav__icon" aria-hidden="true">?</span><span>FAQ<small>Вопросы и ответы</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><details class="nav__future"><summary>Ещё <span aria-hidden="true">⌄</span></summary><div class="nav__future-list"><button type="button" data-info="Каталог" data-planned-route="market.html"><span>Каталог</span><small>Скоро</small></button><button type="button" data-info="Инвентарь" data-planned-route="inventory.html"><span>Инвентарь</span><small>Скоро</small></button><button type="button" data-info="Профиль" data-planned-route="profile.html"><span>Профиль</span><small>Скоро</small></button><button type="button" data-info="Баланс" data-planned-route="wallet.html"><span>Баланс</span><small>Скоро</small></button><button type="button" data-info="История сделок" data-planned-route="orders.html"><span>История сделок</span><small>Скоро</small></button><button type="button" data-info="Поддержка" data-planned-route="support.html"><span>Поддержка</span><small>Скоро</small></button></div></details></div>
+            <div class="nav__links"><a class="nav__active" aria-current="page" href="./market.html"><span class="nav__icon" aria-hidden="true">◈</span><span>Каталог<small>Найди свой следующий скин</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><a href="./index.html"><span class="nav__icon" aria-hidden="true">⌂</span><span>Главная<small>Знакомство с F-Market</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><a href="./change-page.html"><span class="nav__icon" aria-hidden="true">⇄</span><span>Обмен<small>Выбор предметов и расчёт</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><a href="./index.html#how"><span class="nav__icon" aria-hidden="true">≋</span><span>Как продать<small>Четыре простых шага</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><a href="./index.html#faq"><span class="nav__icon" aria-hidden="true">?</span><span>FAQ<small>Вопросы и ответы</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><details class="nav__future"><summary>Ещё <span aria-hidden="true">⌄</span></summary><div class="nav__future-list"><button type="button" data-info="Инвентарь" data-planned-route="inventory.html"><span>Инвентарь</span><small>Скоро</small></button><button type="button" data-info="Профиль" data-planned-route="profile.html"><span>Профиль</span><small>Скоро</small></button><button type="button" data-info="Баланс" data-planned-route="wallet.html"><span>Баланс</span><small>Скоро</small></button><button type="button" data-info="История сделок" data-planned-route="orders.html"><span>История сделок</span><small>Скоро</small></button><button type="button" data-info="Поддержка" data-planned-route="support.html"><span>Поддержка</span><small>Скоро</small></button></div></details></div>
             <div class="nav__bottom"><button class="button" data-auth><img src="./images/f2a6f.svg" width="24" height="24" alt="">Войти через Steam <span aria-hidden="true">↗</span></button><p>Подключение Steam пока недоступно</p></div>
           </nav>
           <div class="nav-backdrop" aria-hidden="true"></div>
@@ -76,13 +79,53 @@
         </div>
       </header>
       <main id="main">
-        
-      </main>
+<section class="market container" aria-labelledby="market-title">
+  <nav class="market__breadcrumb" aria-label="Хлебные крошки"><a href="./index.html">Главная</a><span aria-hidden="true">/</span><span aria-current="page">Каталог</span></nav>
+  <div class="market__heading"><div><p class="market__eyebrow">F-MARKET / COUNTER-STRIKE 2</p><h1 id="market-title">Твой следующий <span>скин.</span></h1><p class="market__intro">Найди тот самый предмет для своего инвентаря.</p></div><a class="market__sell" href="./change-page.html"><span>Есть что обменять?</span><strong>Перейти к обмену ↗</strong></a></div>
+  <div class="market__notice" role="status" id="market-mode"><span class="market__dot"></span><span>Локальный предпросмотр · цены и доступность тестовые. Покупки недоступны.</span></div>
+  <div class="market__categories" role="group" aria-label="Категория предметов">
+    <button type="button" data-category="all" aria-pressed="true"><span aria-hidden="true">◈</span>Все предметы</button>
+    <button type="button" data-category="rifle" aria-pressed="false">Винтовки</button>
+    <button type="button" data-category="sniper" aria-pressed="false">Снайперские</button>
+    <button type="button" data-category="pistol" aria-pressed="false">Пистолеты</button>
+    <button type="button" data-category="knife" aria-pressed="false">Ножи</button>
+    <button type="button" data-category="gloves" aria-pressed="false">Перчатки</button>
+  </div>
+  <div class="market__layout">
+    <aside class="market-filters" id="market-filters" aria-labelledby="filters-title">
+      <form id="filters-form" novalidate>
+        <div class="market-filters__heading"><h2 id="filters-title">Фильтры</h2><button type="button" data-reset>Сбросить</button><button type="button" class="market-filters__close" aria-label="Закрыть фильтры">×</button></div>
+        <fieldset><legend>Цена, ₴</legend><div class="market-filters__prices"><label><span>От</span><input id="price-min" name="min" type="number" min="0" max="10000000" step="0.01" placeholder="0" inputmode="decimal"></label><label><span>До</span><input id="price-max" name="max" type="number" min="0" max="10000000" step="0.01" placeholder="Любая" inputmode="decimal"></label></div><p class="market-filters__error" id="price-error" role="status"></p></fieldset>
+        <fieldset><legend>Оружие</legend><label class="sr-only" for="weapon-filter">Выберите оружие</label><select id="weapon-filter" name="weapon"><option value="all">Любое оружие</option><option>AK-47</option><option>AWP</option><option>M4A1-S</option><option>USP-S</option><option>Desert Eagle</option><option>Glock-18</option><option>Karambit</option><option>Sport Gloves</option></select></fieldset>
+        <fieldset><legend>Износ</legend><label class="market-check"><input name="wear" type="checkbox" value="MW"><span>Немного поношенное</span><small>MW</small></label><label class="market-check"><input name="wear" type="checkbox" value="FT"><span>После полевых испытаний</span><small>FT</small></label><label class="market-check"><input name="wear" type="checkbox" value="WW"><span>Поношенное</span><small>WW</small></label></fieldset>
+        <fieldset><legend>Редкость</legend><label class="market-check"><input name="rarity" type="checkbox" value="covert"><i class="rarity-dot rarity-dot--covert"></i><span>Тайное</span></label><label class="market-check"><input name="rarity" type="checkbox" value="classified"><i class="rarity-dot rarity-dot--classified"></i><span>Засекреченное</span></label><label class="market-check"><input name="rarity" type="checkbox" value="extraordinary"><i class="rarity-dot rarity-dot--extraordinary"></i><span>Экстраординарное</span></label></fieldset>
+        <fieldset><legend>Дополнительно</legend><label class="market-check"><input name="stattrak" type="checkbox"><span>Только StatTrak™</span></label><label class="market-check"><input name="available" type="checkbox"><span>Без блокировки обмена</span></label></fieldset>
+        <p class="market-filters__hint">Подбирайте по стилю.<br>Сравнивайте по деталям.</p>
+        <button class="button market-filters__apply" type="button">Показать предметы</button>
+      </form>
+    </aside>
+    <div class="market-results">
+      <div class="market-toolbar"><label class="market-search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></svg><span class="sr-only">Поиск скина</span><input id="market-search" type="search" placeholder="Название оружия или скина…" autocomplete="off"></label><button class="market-icon-button" id="favorites-filter" aria-pressed="false" aria-label="Показать избранное">♡ <span id="favorite-count">0</span></button><button class="market-icon-button" id="cart-open" aria-label="Открыть подборку">Подборка <span id="cart-count">0</span></button></div>
+      <div class="market-results__bar"><p id="result-count" role="status">Загружаем предметы…</p><button id="filters-open" type="button" aria-controls="market-filters" aria-expanded="false">☷ Фильтры <span id="filter-count"></span></button><label class="market-sort"><span class="sr-only">Сортировка</span><select id="market-sort"><option value="featured">Рекомендуемые</option><option value="price-asc">Сначала дешевле</option><option value="price-desc">Сначала дороже</option><option value="name">По названию</option><option value="float">По float</option></select></label></div>
+      <div class="market-chips" id="market-chips" aria-label="Активные фильтры"></div>
+      <div class="market-grid" id="market-grid" aria-busy="true"></div>
+      <div class="market-empty" id="market-empty" hidden><span aria-hidden="true">⌕</span><h2 id="empty-title">Ничего не найдено</h2><p id="empty-description">Попробуйте изменить запрос или убрать часть фильтров.</p><button type="button" class="button" data-reset>Сбросить фильтры</button></div>
+      <div class="market-pagination" id="market-pagination"><p id="shown-count"></p><button class="market-load" id="load-more" type="button">Показать ещё <span aria-hidden="true">↓</span></button></div>
+      <noscript><p class="market__notice">Для поиска и просмотра каталога включите JavaScript. Торговля пока не подключена.</p></noscript>
+    </div>
+  </div>
+  <div class="market-bottom"><div><span class="market__eyebrow">ОБНОВИ СВОЙ ИНВЕНТАРЬ</span><h2>Новый стиль.<br>Знакомый F-Market.</h2><p>Хочешь расстаться с прежними скинами?<br>Начни со страницы обмена.</p></div><a class="button button--pill" href="./change-page.html">Перейти к обмену <span aria-hidden="true">↗</span></a></div>
+</section>
+<dialog class="market-dialog" id="skin-dialog" aria-labelledby="skin-dialog-title"><button class="market-dialog__close" type="button" aria-label="Закрыть просмотр">×</button><div id="skin-dialog-content"></div></dialog>
+<dialog class="market-dialog market-cart" id="cart-dialog" aria-labelledby="cart-title"><button class="market-dialog__close" type="button" aria-label="Закрыть подборку">×</button><p class="market__eyebrow">ТВОЙ ВЫБОР</p><h2 id="cart-title">Подборка предметов</h2><p class="market-cart__note">Локальная подборка для сравнения. Предметы не резервируются.</p><div id="cart-items"></div><div class="market-cart__total"><span>Тестовая сумма</span><strong id="cart-total">0 ₴</strong></div><button type="button" id="checkout-preview" class="button">Проверить возможность покупки</button><p id="checkout-status" role="status"></p></dialog>
+<p class="market-toast" id="market-toast" role="status"></p>
+
+</main>
       <footer class="footer">
         <div class="container">
           <div class="footer__grid">
             <div class="footer__brand">
-              <a class="logo" href="#top" aria-label="F-Market — главная">
+              <a class="logo" href="./index.html" aria-label="F-Market — главная">
                 <span class="logo__art">
                   <img
                     src="./images/58825.webp"
@@ -104,10 +147,11 @@
             </div>
             <div class="footer__links">
               <h2>Меню</h2>
+              <a href="./market.html">Каталог</a>
               <a href="./change-page.html">Обмен</a>
-              <a href="#about">Про нас</a>
-              <a href="#how">Как продать</a>
-              <a href="#faq">FAQ</a>
+              <a href="./index.html#about">Про нас</a>
+              <a href="./index.html#how">Как продать</a>
+              <a href="./index.html#faq">FAQ</a>
             </div>
             <div class="footer__links">
               <h2>F-MARKER</h2>
@@ -115,7 +159,7 @@
               <button data-info="Партнерская программа">
                 Партнерская программа
               </button>
-              <a href="#about">О нас</a>
+              <a href="./index.html#about">О нас</a>
             </div>
             <div class="footer__links">
               <h2>Умови</h2>
