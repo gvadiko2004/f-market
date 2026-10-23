@@ -12,6 +12,7 @@
     <link rel="icon" href="./images/58825.png" />
     <link rel="stylesheet" href="./css/fonts.css" />
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/navigation-pages.css">
     <script src="./js/main.js" defer></script>
   </head>
   <body>
@@ -33,12 +34,7 @@
           </a>
           <nav class="nav" id="navigation" aria-label="Основная навигация">
             <div class="nav__intro"><span class="nav__eyebrow">F-MARKET / CS2</span><h2>Твои скины.<br><span>Твои возможности.</span></h2><p>Всё о продаже — в одном месте.</p></div>
-            <div class="nav__links">
-              <a class="nav__active" href="#sell"><span class="nav__icon" aria-hidden="true">↗</span><span>Продать скины<small>Начни с подключения Steam</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a>
-              <a href="#about"><span class="nav__icon" aria-hidden="true">◈</span><span>О F-Market<small>Знакомство с платформой</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a>
-              <a href="#how"><span class="nav__icon" aria-hidden="true">≋</span><span>Как продать<small>Четыре простых шага</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a>
-              <a href="#faq"><span class="nav__icon" aria-hidden="true">?</span><span>Вопросы и ответы<small>Разберёмся в деталях</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a>
-            </div>
+            <div class="nav__links"><a class="nav__active" aria-current="page" href="./index.html"><span class="nav__icon" aria-hidden="true">⌂</span><span>Главная<small>Знакомство с F-Market</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><a href="./change-page.html"><span class="nav__icon" aria-hidden="true">⇄</span><span>Обмен<small>Выбор предметов и расчёт</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><a href="./index.html#how"><span class="nav__icon" aria-hidden="true">≋</span><span>Как продать<small>Четыре простых шага</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><a href="#faq"><span class="nav__icon" aria-hidden="true">?</span><span>FAQ<small>Вопросы и ответы</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><details class="nav__future"><summary>Ещё <span aria-hidden="true">⌄</span></summary><div class="nav__future-list"><button type="button" data-info="Каталог" data-planned-route="market.html"><span>Каталог</span><small>Скоро</small></button><button type="button" data-info="Инвентарь" data-planned-route="inventory.html"><span>Инвентарь</span><small>Скоро</small></button><button type="button" data-info="Профиль" data-planned-route="profile.html"><span>Профиль</span><small>Скоро</small></button><button type="button" data-info="Баланс" data-planned-route="wallet.html"><span>Баланс</span><small>Скоро</small></button><button type="button" data-info="История сделок" data-planned-route="orders.html"><span>История сделок</span><small>Скоро</small></button><button type="button" data-info="Поддержка" data-planned-route="support.html"><span>Поддержка</span><small>Скоро</small></button></div></details></div>
             <div class="nav__bottom"><button class="button" data-auth><img src="./images/f2a6f.svg" width="24" height="24" alt="">Войти через Steam <span aria-hidden="true">↗</span></button><p>Подключение Steam пока недоступно</p></div>
           </nav>
           <div class="nav-backdrop" aria-hidden="true"></div>
@@ -757,7 +753,7 @@
             </div>
             <div class="footer__links">
               <h2>Меню</h2>
-              <a href="#sell">Продать</a>
+              <a href="./change-page.html">Обмен</a>
               <a href="#about">Про нас</a>
               <a href="#how">Как продать</a>
               <a href="#faq">FAQ</a>

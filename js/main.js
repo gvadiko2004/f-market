@@ -6,7 +6,7 @@
   const profileMenu = document.querySelector('.profile__menu');
   const dialog = document.querySelector('#info-dialog');
   let returnFocus;
-  const mobileViewport = matchMedia('(max-width: 850px)');
+  const mobileViewport = matchMedia(`(max-width: ${document.body.dataset.menuBreakpoint || 850}px)`);
   const backdrop = document.querySelector('.nav-backdrop');
   const pageRegions = [...document.querySelectorAll('main, footer, .profile, .header .logo')];
   const setPageInert = value => pageRegions.forEach(element => { element.inert = value; });
@@ -14,6 +14,7 @@
     menuButton.setAttribute('aria-expanded', 'false');
     menuButton.setAttribute('aria-label', 'Открыть меню');
     nav.classList.remove('is-open');
+    nav.querySelectorAll('details[open]').forEach(details => { details.open = false; });
     backdrop.classList.remove('is-visible');
     document.documentElement.classList.remove('menu-open');
     setPageInert(false);
@@ -37,7 +38,8 @@
   });
   nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
     closeMenu();
-    const target = document.querySelector(link.getAttribute('href'));
+    const href = link.getAttribute('href');
+    const target = href?.startsWith('#') ? document.getElementById(href.slice(1)) : null;
     if (target) { target.setAttribute('tabindex', '-1'); target.focus({ preventScroll: true }); }
   }));
   profileButton.addEventListener('click', () => {
@@ -52,7 +54,7 @@
   });
   document.addEventListener('keydown', event => {
     if (event.key === 'Tab' && mobileViewport.matches && nav.classList.contains('is-open')) {
-      const items = [...nav.querySelectorAll('a, button'), menuButton];
+      const items = [...nav.querySelectorAll('a, button, summary'), menuButton].filter(item => item.getClientRects().length);
       const current = items.indexOf(document.activeElement);
       event.preventDefault();
       items[(current + (event.shiftKey ? -1 : 1) + items.length) % items.length].focus();

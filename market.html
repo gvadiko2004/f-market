@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1d1f20" />
+    <meta
+      name="description"
+      content="F-Market — продажа игровых скинов. Узнайте, как обменять предметы Steam и получить выплату."
+    />
+    <title>F-Market — продажа скинов</title>
+    <link rel="icon" href="./images/58825.png" />
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/navigation-pages.css">
+    <script src="./js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+    <div class="wrapper" id="top">
+      <header class="header">
+        <div class="container header__inner">
+          <a class="logo" href="#top" aria-label="F-Market — главная">
+            <span class="logo__art">
+              <img
+                src="./images/58825.webp"
+                class=""
+                alt=""
+                width="1024"
+                height="1024"
+              />
+            </span>
+            <span> <span class="green-text">F</span>-MARKET</span>
+          </a>
+          <nav class="nav" id="navigation" aria-label="Основная навигация">
+            <div class="nav__intro"><span class="nav__eyebrow">F-MARKET / CS2</span><h2>Твои скины.<br><span>Твои возможности.</span></h2><p>Всё о продаже — в одном месте.</p></div>
+            <div class="nav__links"><a class="nav__active" aria-current="page" href="./index.html"><span class="nav__icon" aria-hidden="true">⌂</span><span>Главная<small>Знакомство с F-Market</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><a href="./change-page.html"><span class="nav__icon" aria-hidden="true">⇄</span><span>Обмен<small>Выбор предметов и расчёт</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><a href="./index.html#how"><span class="nav__icon" aria-hidden="true">≋</span><span>Как продать<small>Четыре простых шага</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><a href="#faq"><span class="nav__icon" aria-hidden="true">?</span><span>FAQ<small>Вопросы и ответы</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><details class="nav__future"><summary>Ещё <span aria-hidden="true">⌄</span></summary><div class="nav__future-list"><button type="button" data-info="Каталог" data-planned-route="market.html"><span>Каталог</span><small>Скоро</small></button><button type="button" data-info="Инвентарь" data-planned-route="inventory.html"><span>Инвентарь</span><small>Скоро</small></button><button type="button" data-info="Профиль" data-planned-route="profile.html"><span>Профиль</span><small>Скоро</small></button><button type="button" data-info="Баланс" data-planned-route="wallet.html"><span>Баланс</span><small>Скоро</small></button><button type="button" data-info="История сделок" data-planned-route="orders.html"><span>История сделок</span><small>Скоро</small></button><button type="button" data-info="Поддержка" data-planned-route="support.html"><span>Поддержка</span><small>Скоро</small></button></div></details></div>
+            <div class="nav__bottom"><button class="button" data-auth><img src="./images/f2a6f.svg" width="24" height="24" alt="">Войти через Steam <span aria-hidden="true">↗</span></button><p>Подключение Steam пока недоступно</p></div>
+          </nav>
+          <div class="nav-backdrop" aria-hidden="true"></div>
+          <div class="header__actions">
+            <div class="profile">
+              <button
+                class="profile__button"
+                aria-expanded="false"
+                aria-controls="profile-menu"
+              >
+                <img src="./images/b1a36.svg" class="profile__chevron" alt="" />
+                <span class="profile__text">
+                  <strong> <span class="green-text">F</span>-MARKET</strong>
+                  <span>Гость</span>
+                </span>
+                <img
+                  src="./images/27f30.webp"
+                  class="profile__avatar"
+                  alt="Аватар профиля"
+                  width="52"
+                  height="52"
+                />
+              </button>
+              <div class="profile__menu" id="profile-menu" hidden>
+                <p>Вы ещё не вошли в аккаунт</p>
+                <button data-auth>Войти через Steam</button>
+              </div>
+            </div>
+            <button
+              class="menu-toggle"
+              aria-expanded="false"
+              aria-controls="navigation"
+              aria-label="Открыть меню"
+            >
+              <span> </span>
+              <span> </span>
+            </button>
+          </div>
+        </div>
+      </header>
+      <main id="main">
+        
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__grid">
+            <div class="footer__brand">
+              <a class="logo" href="#top" aria-label="F-Market — главная">
+                <span class="logo__art">
+                  <img
+                    src="./images/58825.webp"
+                    class=""
+                    alt=""
+                    width="1024"
+                    height="1024"
+                  />
+                </span>
+                <span> <span class="green-text">F</span>-MARKET</span>
+              </a>
+              <p>
+                Надежный сервис для продаж скинов Steam с быстрыми выплатами
+              </p>
+              <button class="button button--pill" data-auth>
+                <img src="./images/f2a6f.svg" class="steam-icon" alt="" />
+                <span>Войти через Steam</span>
+              </button>
+            </div>
+            <div class="footer__links">
+              <h2>Меню</h2>
+              <a href="./change-page.html">Обмен</a>
+              <a href="#about">Про нас</a>
+              <a href="#how">Как продать</a>
+              <a href="#faq">FAQ</a>
+            </div>
+            <div class="footer__links">
+              <h2>F-MARKER</h2>
+              <button data-info="Блог">Блог</button>
+              <button data-info="Партнерская программа">
+                Партнерская программа
+              </button>
+              <a href="#about">О нас</a>
+            </div>
+            <div class="footer__links">
+              <h2>Умови</h2>
+              <button data-info="Політика конфіденційності" lang="uk">
+                Політика конфіденційності
+              </button>
+              <button data-info="Умови використання" lang="uk">
+                Умови використання
+              </button>
+            </div>
+            <div class="newsletter">
+              <h2>Подпишись на наши новости</h2>
+              <form class="newsletter__form">
+                <label class="sr-only" for="newsletter-email">Ваш email</label>
+                <input
+                  id="newsletter-email"
+                  type="email"
+                  name="email"
+                  placeholder="example@gmail.com"
+                  autocomplete="email"
+                  required
+                />
+                <button aria-label="Подписаться">
+                  <img src="./images/929ec.svg" class="" alt="" />
+                </button>
+              </form>
+              <p class="newsletter__status" role="status"></p>
+            </div>
+          </div>
+          <p class="footer__legal">
+            F-Market — платформа в разработке. Авторизация, торговля и платежи пока недоступны. F-Market не связан с Valve Corporation.
+          </p>
+        </div>
+      </footer>
+    </div>
+    <dialog class="dialog" id="info-dialog" aria-labelledby="dialog-title">
+      <button class="dialog__close" aria-label="Закрыть">×</button>
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-description"></p>
+      <button class="button dialog__ok">Понятно</button>
+    </dialog>
+  </body>
+</html>

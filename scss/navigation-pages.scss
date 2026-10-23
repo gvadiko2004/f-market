@@ -1,0 +1,13 @@
+/* Navigation shared by the existing home and exchange pages. Plain CSS-compatible SCSS. */
+.nav__future { position:relative; white-space:nowrap; }
+.nav__future summary { cursor:pointer; list-style:none; display:flex; gap:8px; align-items:center; min-height:40px; }
+.nav__future summary::-webkit-details-marker { display:none; }
+.nav__future summary:focus-visible { outline:2px solid #37e5a3; outline-offset:4px; }
+.nav__future-list { position:absolute; right:0; top:calc(100% + 10px); min-width:230px; padding:8px; background:#252b28; border:1px solid #ffffff20; border-radius:14px; box-shadow:0 15px 40px #0007; z-index:40; }
+.nav__future-list button { display:flex; width:100%; align-items:center; justify-content:space-between; gap:24px; padding:12px; border-radius:8px; background:none; text-align:left; font-size:13px; }
+.nav__future-list button:hover { background:#00b67a18; }
+.nav__future-list small { display:inline; color:#91a99d; font-size:10px; font-weight:400; }
+@media (max-width:850px) {
+ .nav__future summary { min-height:48px; padding:12px; font-size:14px; }
+ .nav__future-list { position:static; margin-top:4px; min-width:0; box-shadow:none; }
+}

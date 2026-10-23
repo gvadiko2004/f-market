@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1d1f20" />
+    <meta
+      name="description"
+      content="F-Market — продажа игровых скинов. Узнайте, как обменять предметы Steam и получить выплату."
+    />
+    <title>F-Market — обмен скинов</title>
+    <link rel="icon" href="./images/58825.png" />
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/navigation-pages.css">
+    <link rel="stylesheet" href="./css/change-page.css">
+    <script src="./js/main.js" defer></script>
+    <script src="./js/change-preview.js" defer></script>
+    <script src="./js/change-page.js" defer></script>
+  </head>
+  <body class="exchange-page" data-menu-breakpoint="440">
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+    <div class="wrapper" id="top">
+      <header class="header">
+        <div class="container header__inner">
+          <a class="logo" href="./index.html" aria-label="F-Market — главная">
+            <span class="logo__art">
+              <img
+                src="./images/58825.webp"
+                class=""
+                alt=""
+                width="1024"
+                height="1024"
+              />
+            </span>
+            <span> <span class="green-text">F</span>-MARKET</span>
+          </a>
+          <nav class="nav" id="navigation" aria-label="Основная навигация">
+            <div class="nav__intro"><span class="nav__eyebrow">F-MARKET / CS2</span><h2>Твои скины.<br><span>Твои возможности.</span></h2><p>Всё о продаже — в одном месте.</p></div>
+            <div class="nav__links"><a href="./index.html"><span class="nav__icon" aria-hidden="true">⌂</span><span>Главная<small>Знакомство с F-Market</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><a class="nav__active" aria-current="page" href="./change-page.html"><span class="nav__icon" aria-hidden="true">⇄</span><span>Обмен<small>Выбор предметов и расчёт</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><a href="./index.html#how"><span class="nav__icon" aria-hidden="true">≋</span><span>Как продать<small>Четыре простых шага</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><a href="#faq"><span class="nav__icon" aria-hidden="true">?</span><span>FAQ<small>Вопросы и ответы</small></span><span class="nav__arrow" aria-hidden="true">↗</span></a><details class="nav__future"><summary>Ещё <span aria-hidden="true">⌄</span></summary><div class="nav__future-list"><button type="button" data-info="Каталог" data-planned-route="market.html"><span>Каталог</span><small>Скоро</small></button><button type="button" data-info="Инвентарь" data-planned-route="inventory.html"><span>Инвентарь</span><small>Скоро</small></button><button type="button" data-info="Профиль" data-planned-route="profile.html"><span>Профиль</span><small>Скоро</small></button><button type="button" data-info="Баланс" data-planned-route="wallet.html"><span>Баланс</span><small>Скоро</small></button><button type="button" data-info="История сделок" data-planned-route="orders.html"><span>История сделок</span><small>Скоро</small></button><button type="button" data-info="Поддержка" data-planned-route="support.html"><span>Поддержка</span><small>Скоро</small></button></div></details></div>
+            <div class="nav__bottom"><button class="button" data-auth><img src="./images/f2a6f.svg" width="24" height="24" alt="">Войти через Steam <span aria-hidden="true">↗</span></button><p>Подключение Steam пока недоступно</p></div>
+          </nav>
+          <div class="nav-backdrop" aria-hidden="true"></div>
+          <div class="header__actions">
+            <div class="profile">
+              <button
+                class="profile__button"
+                aria-expanded="false"
+                aria-controls="profile-menu"
+              >
+                <img src="./images/b1a36.svg" class="profile__chevron" alt="" />
+                <span class="profile__text">
+                  <strong> <span class="green-text">F</span>-MARKET</strong>
+                  <span>Гость</span>
+                </span>
+                <img
+                  src="./images/27f30.webp"
+                  class="profile__avatar"
+                  alt="Аватар профиля"
+                  width="52"
+                  height="52"
+                />
+              </button>
+              <div class="profile__menu" id="profile-menu" hidden>
+                <p>Вы ещё не вошли в аккаунт</p>
+                <button data-auth>Войти через Steam</button>
+              </div>
+            </div>
+            <button
+              class="menu-toggle"
+              aria-expanded="false"
+              aria-controls="navigation"
+              aria-label="Открыть меню"
+            >
+              <span> </span>
+              <span> </span>
+            </button>
+          </div>
+        </div>
+      </header>
+      <main id="main">
+        <section class="exchange container" aria-labelledby="exchange-title">
+          <h1 class="sr-only" id="exchange-title">Обмен и продажа скинов</h1>
+          <div class="exchange__top">
+            <form class="trade-link" novalidate>
+              <label for="trade-url">Your trade link</label>
+              <div class="trade-link__field">
+                <input id="trade-url" name="trade-url" type="url" placeholder="https://steamcommunity.com/tradeoffer/new/?partner=…&amp;token=…" autocomplete="off" spellcheck="false" aria-describedby="trade-url-status" required>
+                <button type="submit" aria-label="Проверить Trade URL"><img src="./images/exchange/8ba7e.svg" width="37" height="37" alt="" aria-hidden="true"></button>
+              </div>
+              <p id="trade-url-status" class="field-status" role="status"></p>
+            </form>
+            <p class="exchange__preview" id="preview-label">Предпросмотр · данные из макета</p>
+          </div>
+          <div class="exchange__toolbar">
+            <div class="exchange__games" role="group" aria-label="Игра">
+              <button class="search-toggle" type="button" aria-label="Поиск предметов" aria-controls="inventory-search" aria-expanded="false"><img src="./images/exchange/6e697.svg" width="38" height="38" alt="" aria-hidden="true"></button>
+              <button class="game-switch" data-game="cs2" type="button" aria-pressed="true">CS:2 <span class="switch-track" aria-hidden="true"></span></button>
+              <button class="game-switch" data-game="dota2" type="button" aria-pressed="false">DOTA 2 <span class="switch-track" aria-hidden="true"></span></button>
+            </div>
+            <div class="exchange__actions">
+              <button class="filter-button" id="sort-price" type="button" aria-label="Цена: по возрастанию"><img src="./images/exchange/4e868.svg" width="23" height="21" alt="" aria-hidden="true"><span>Price</span></button>
+              <button class="filter-button" id="select-all" type="button">Select all</button>
+              <button class="filter-button" id="unselect-all" type="button">Unselect all</button>
+            </div>
+          </div>
+          <div class="inventory-search" id="inventory-search" hidden>
+            <label class="sr-only" for="skin-search">Название предмета</label>
+            <input id="skin-search" type="search" placeholder="Поиск по названию скина…" autocomplete="off">
+            <span id="search-count" role="status"></span>
+          </div>
+          <div class="exchange__layout">
+            <div class="inventory" aria-label="Инвентарь">
+              <div class="inventory__grid" id="inventory-grid"></div>
+              <div class="inventory__empty" id="inventory-empty" hidden><span aria-hidden="true">◇</span><h2>Предметы не найдены</h2><p id="inventory-message"></p><button class="button" type="button" id="reset-filters">Сбросить фильтры</button></div>
+              <noscript><p class="inventory__noscript">Для выбора предметов включите JavaScript. Обмены пока не подключены.</p></noscript>
+            </div>
+            <form class="payout" id="payout-form" aria-label="Расчёт выплаты" novalidate>
+              <div class="payout__total"><span>Total:</span><output id="total-amount" aria-live="polite">—</output></div>
+              <p class="payout__caption">Выберите варианты для продажи</p>
+              <div class="payout__notice"><span class="payout__notice-icon" aria-hidden="true"><img src="./images/exchange/99b20.svg" width="38" height="38" alt="" aria-hidden="true"></span><p>Это предпросмотр обмена. Предметы и суммы взяты из макета. Реальные обмены и выплаты пока недоступны.</p></div>
+              <fieldset class="payout__methods"><legend class="sr-only">Способ выплаты — варианты из макета</legend><label class="payment-method"><input type="radio" name="payment" value="design-1" aria-label="Вариант из макета 1" ><span class="payment-method__tile"><img src="./images/exchange/dc2da.png" width="100" height="60" alt="Skins Cash — образец из макета"></span></label>
+<label class="payment-method"><input type="radio" name="payment" value="design-2" aria-label="Вариант из макета 2" ><span class="payment-method__tile"><img src="./images/exchange/dc2da.png" width="100" height="60" alt="Skins Cash — образец из макета"></span></label>
+<label class="payment-method"><input type="radio" name="payment" value="design-3" aria-label="Вариант из макета 3" ><span class="payment-method__tile"><img src="./images/exchange/dc2da.png" width="100" height="60" alt="Skins Cash — образец из макета"></span></label>
+<label class="payment-method"><input type="radio" name="payment" value="design-4" aria-label="Вариант из макета 4" ><span class="payment-method__tile"><img src="./images/exchange/dc2da.png" width="100" height="60" alt="Skins Cash — образец из макета"></span></label>
+<label class="payment-method"><input type="radio" name="payment" value="design-5" aria-label="Вариант из макета 5" ><span class="payment-method__tile"><img src="./images/exchange/dc2da.png" width="100" height="60" alt="Skins Cash — образец из макета"></span></label>
+<label class="payment-method"><input type="radio" name="payment" value="design-6" aria-label="Вариант из макета 6" checked><span class="payment-method__tile"><img src="./images/exchange/dc2da.png" width="100" height="60" alt="Skins Cash — образец из макета"></span></label>
+<label class="payment-method"><input type="radio" name="payment" value="design-7" aria-label="Вариант из макета 7" ><span class="payment-method__tile"><img src="./images/exchange/dc2da.png" width="100" height="60" alt="Skins Cash — образец из макета"></span></label>
+<label class="payment-method"><input type="radio" name="payment" value="design-8" aria-label="Вариант из макета 8" ><span class="payment-method__tile"><img src="./images/exchange/dc2da.png" width="100" height="60" alt="Skins Cash — образец из макета"></span></label>
+<label class="payment-method"><input type="radio" name="payment" value="design-9" aria-label="Вариант из макета 9" ><span class="payment-method__tile"><img src="./images/exchange/dc2da.png" width="100" height="60" alt="Skins Cash — образец из макета"></span></label>
+<label class="payment-method"><input type="radio" name="payment" value="design-10" aria-label="Вариант из макета 10" ><span class="payment-method__tile"><img src="./images/exchange/dc2da.png" width="100" height="60" alt="Skins Cash — образец из макета"></span></label>
+<label class="payment-method"><input type="radio" name="payment" value="design-11" aria-label="Вариант из макета 11" ><span class="payment-method__tile"><img src="./images/exchange/dc2da.png" width="100" height="60" alt="Skins Cash — образец из макета"></span></label>
+<label class="payment-method"><input type="radio" name="payment" value="design-12" aria-label="Вариант из макета 12" ><span class="payment-method__tile"><img src="./images/exchange/dc2da.png" width="100" height="60" alt="Skins Cash — образец из макета"></span></label></fieldset>
+              <fieldset class="payout__currency"><legend class="sr-only">Валюта выплаты</legend><label><input type="radio" name="currency" value="USD"><span>USD</span></label><label><input type="radio" name="currency" value="UAH" checked><span>UAH</span></label><label><input type="radio" name="currency" value="EUR"><span>EUR</span></label></fieldset>
+              <p class="field-status" id="currency-status" role="status"></p>
+              <div class="payout__email"><label for="payout-email">Your email:</label><input id="payout-email" name="email" type="email" autocomplete="email" placeholder="example@gmail.com" required aria-describedby="payout-status"></div>
+              <dl class="payout__breakdown"><div><dt>Depositing offer:</dt><dd id="deposit-amount">0₴</dd></div><div><dt>Комиссия в макете (0%)</dt><dd>Тестовый расчёт</dd></div><div><dt>Total payout:</dt><dd><output id="payout-amount">—</output></dd></div></dl>
+              <label class="payout__consent"><span>I agree to receive emails with interesting offers from the service.</span><input name="marketing" type="checkbox" role="switch"><span class="switch-track" aria-hidden="true"></span></label>
+              <p class="field-status" id="payout-status" role="status"></p>
+              <button class="payout__submit" type="submit">GET CASH NOW!</button>
+            </form>
+          </div>
+          <p class="sr-only" id="selection-status" role="status"></p>
+          <a class="exchange__mobile-total" href="#payout-form"><span>Выбрано: <b id="mobile-count">0</b></span><span id="mobile-amount">—</span><span aria-hidden="true">↓</span></a>
+        </section>
+
+        <section class="faq container" id="faq" aria-labelledby="faq-title">
+          <h2 class="section-title reveal" id="faq-title">FAQ</h2>
+          <div class="faq__list">
+            <details class="faq__item reveal">
+              <summary>
+                <span lang="uk">Як швидко я зможу продати скін?</span>
+                <span class="faq__icon" aria-hidden="true">
+                  <img src="./images/d3c8e.svg" class="" alt="" />
+                  <span>+</span>
+                </span>
+                <span class="faq__line" aria-hidden="true">
+                  <img src="./images/d8776.svg" alt="" />
+                </span>
+              </summary>
+              <div class="faq__answer" lang="uk">
+                <p>
+                  Оберіть доступні предмети, перевірте пропозицію та підтвердьте
+                  обмін у Steam. Час завершення залежить від доступності
+                  предметів і обмежень Steam.
+                </p>
+              </div>
+            </details>
+            <details class="faq__item reveal">
+              <summary>
+                <span lang="uk">Я можу продати будь-який свій скін?</span>
+                <span class="faq__icon" aria-hidden="true">
+                  <img src="./images/d3c8e.svg" class="" alt="" />
+                  <span>+</span>
+                </span>
+                <span class="faq__line" aria-hidden="true">
+                  <img src="./images/d8776.svg" alt="" />
+                </span>
+              </summary>
+              <div class="faq__answer" lang="uk">
+                <p>
+                  Для продажу доступні предмети, які можна передавати через
+                  Steam. Предмети з блокуванням обміну стануть доступними після
+                  завершення обмеження.
+                </p>
+              </div>
+            </details>
+            <details class="faq__item reveal">
+              <summary>
+                <span lang="uk">Як мені передати скін покупцю?</span>
+                <span class="faq__icon" aria-hidden="true">
+                  <img src="./images/d3c8e.svg" class="" alt="" />
+                  <span>+</span>
+                </span>
+                <span class="faq__line" aria-hidden="true">
+                  <img src="./images/d8776.svg" alt="" />
+                </span>
+              </summary>
+              <div class="faq__answer" lang="uk">
+                <p>
+                  Після вибору предметів ви отримаєте пропозицію обміну. Уважно
+                  перевірте її в Steam і підтвердьте передачу у своєму акаунті.
+                </p>
+              </div>
+            </details>
+            <details class="faq__item reveal">
+              <summary>
+                <span lang="uk"
+                  >Як мені перевірити, чи виставлений предмет на продаж?</span
+                >
+                <span class="faq__icon" aria-hidden="true">
+                  <img src="./images/d3c8e.svg" class="" alt="" />
+                  <span>+</span>
+                </span>
+                <span class="faq__line" aria-hidden="true">
+                  <img src="./images/d8776.svg" alt="" />
+                </span>
+              </summary>
+              <div class="faq__answer" lang="uk">
+                <p>
+                  Статус предметів і операцій можна перевірити у своєму
+                  особистому кабінеті після авторизації.
+                </p>
+              </div>
+            </details>
+            <details class="faq__item reveal">
+              <summary>
+                <span lang="uk"
+                  >Як швидко нараховуються кошти на баланс після продажу?</span
+                >
+                <span class="faq__icon" aria-hidden="true">
+                  <img src="./images/d3c8e.svg" class="" alt="" />
+                  <span>+</span>
+                </span>
+                <span class="faq__line" aria-hidden="true">
+                  <img src="./images/d8776.svg" alt="" />
+                </span>
+              </summary>
+              <div class="faq__answer" lang="uk">
+                <p>
+                  Термін зарахування залежить від статусу обміну та обмежень
+                  Steam. Перевірте умови й очікувану дату перед підтвердженням
+                  операції.
+                </p>
+              </div>
+            </details>
+            <details class="faq__item reveal">
+              <summary>
+                <span lang="uk"
+                  >Яку ціну я можу встановити для свого предмета?</span
+                >
+                <span class="faq__icon" aria-hidden="true">
+                  <img src="./images/d3c8e.svg" class="" alt="" />
+                  <span>+</span>
+                </span>
+                <span class="faq__line" aria-hidden="true">
+                  <img src="./images/d8776.svg" alt="" />
+                </span>
+              </summary>
+              <div class="faq__answer" lang="uk">
+                <p>
+                  Перед підтвердженням продажу ви побачите актуальну оцінку
+                  предмета та підсумкову суму пропозиції.
+                </p>
+              </div>
+            </details>
+            <details class="faq__item reveal">
+              <summary>
+                <span lang="uk">Як вивести гроші після продажу?</span>
+                <span class="faq__icon" aria-hidden="true">
+                  <img src="./images/d3c8e.svg" class="" alt="" />
+                  <span>+</span>
+                </span>
+                <span class="faq__line" aria-hidden="true">
+                  <img src="./images/d8776.svg" alt="" />
+                </span>
+              </summary>
+              <div class="faq__answer" lang="uk">
+                <p>
+                  Оберіть доступний платіжний метод, заповніть реквізити й
+                  перевірте підсумкову суму перед підтвердженням виплати.
+                </p>
+              </div>
+            </details>
+            <details class="faq__item reveal">
+              <summary>
+                <span lang="uk"
+                  >Як обрати найкращий сайт для продажу скінів CS2?</span
+                >
+                <span class="faq__icon" aria-hidden="true">
+                  <img src="./images/d3c8e.svg" class="" alt="" />
+                  <span>+</span>
+                </span>
+                <span class="faq__line" aria-hidden="true">
+                  <img src="./images/d8776.svg" alt="" />
+                </span>
+              </summary>
+              <div class="faq__answer" lang="uk">
+                <p>
+                  Порівнюйте прозорість умов, доступні методи виплат, комісії,
+                  підтримку та відгуки користувачів.
+                </p>
+              </div>
+            </details>
+            <details class="faq__item reveal">
+              <summary>
+                <span lang="uk"
+                  >Чому варто використовувати F-Market для продажу скінів
+                  CS2?</span
+                >
+                <span class="faq__icon" aria-hidden="true">
+                  <img src="./images/d3c8e.svg" class="" alt="" />
+                  <span>+</span>
+                </span>
+                <span class="faq__line" aria-hidden="true">
+                  <img src="./images/d8776.svg" alt="" />
+                </span>
+              </summary>
+              <div class="faq__answer" lang="uk">
+                <p>
+                  Порівняйте пропозиції сервісів, умови обміну й підсумкову суму
+                  виплати, щоб обрати відповідний для себе варіант.
+                </p>
+              </div>
+            </details>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__grid">
+            <div class="footer__brand">
+              <a class="logo" href="./index.html" aria-label="F-Market — главная">
+                <span class="logo__art">
+                  <img
+                    src="./images/58825.webp"
+                    class=""
+                    alt=""
+                    width="1024"
+                    height="1024"
+                  />
+                </span>
+                <span> <span class="green-text">F</span>-MARKET</span>
+              </a>
+              <p>
+                Надежный сервис для продаж скинов Steam с быстрыми выплатами
+              </p>
+              <button class="button button--pill" data-auth>
+                <img src="./images/f2a6f.svg" class="steam-icon" alt="" />
+                <span>Войти через Steam</span>
+              </button>
+            </div>
+            <div class="footer__links">
+              <h2>Меню</h2>
+              <a href="./change-page.html" aria-current="page">Обмен</a>
+              <a href="./index.html#about">Про нас</a>
+              <a href="./index.html#how">Как продать</a>
+              <a href="#faq">FAQ</a>
+            </div>
+            <div class="footer__links">
+              <h2>F-MARKER</h2>
+              <button data-info="Блог">Блог</button>
+              <button data-info="Партнерская программа">
+                Партнерская программа
+              </button>
+              <a href="./index.html#about">О нас</a>
+            </div>
+            <div class="footer__links">
+              <h2>Умови</h2>
+              <button data-info="Політика конфіденційності" lang="uk">
+                Політика конфіденційності
+              </button>
+              <button data-info="Умови використання" lang="uk">
+                Умови використання
+              </button>
+            </div>
+            <div class="newsletter">
+              <h2>Подпишись на наши новости</h2>
+              <form class="newsletter__form">
+                <label class="sr-only" for="newsletter-email">Ваш email</label>
+                <input
+                  id="newsletter-email"
+                  type="email"
+                  name="email"
+                  placeholder="example@gmail.com"
+                  autocomplete="email"
+                  required
+                />
+                <button aria-label="Подписаться">
+                  <img src="./images/929ec.svg" class="" alt="" />
+                </button>
+              </form>
+              <p class="newsletter__status" role="status"></p>
+            </div>
+          </div>
+          <p class="footer__legal">
+            F-Market — платформа в разработке. Авторизация, торговля и платежи пока недоступны. F-Market не связан с Valve Corporation.
+          </p>
+        </div>
+      </footer>
+    </div>
+    <dialog class="dialog" id="info-dialog" aria-labelledby="dialog-title">
+      <button class="dialog__close" aria-label="Закрыть">×</button>
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-description"></p>
+      <button class="button dialog__ok">Понятно</button>
+    </dialog>
+  </body>
+</html>
